@@ -64,11 +64,38 @@ var sprintFunctions = {
     return fbArray;
   },
 
-  myMap: function(){
-    // your code here
+  myMap: function(arr, func){
+    var funcArray = arr.map(func);
+    return funcArray;
   },
 
-  primes: function(){
-    // your code here
+  primes: function(num){
+    var allNums = [];
+    var primeArray = [];
+    for (var i = 2; i <= num; i++) {
+      allNums.push(i);
+    }
+   primeArray = allNums;
+
+    for (var i = 0; i < allNums.length; i++) {
+      var count = 0;
+      for (var j = 0; j < allNums.length; j++) {
+        if (allNums[i] % allNums[j] === 0) {
+          count++;
+        }
+
+        }
+        console.log(count);
+        console.log(9 % 3);
+        if (count > 1) {
+          primeArray.splice(i, 1, null);
+      }
+    }
+
+    return primeArray.filter(function (x) {
+      if (Boolean(x)) {
+        return x;
+      }
+    });
   },
 }
