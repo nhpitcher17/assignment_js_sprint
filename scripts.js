@@ -3,13 +3,15 @@
 var sprintFunctions = {
   largestEl: function(arr){
     var largest;
+
     var i = 0;
     while (largest === undefined) {
-    if (typeof arr[i] === 'number') {
-      largest = arr[i];
+      if (typeof arr[i] === 'number') {
+        largest = arr[i];
+      }
+      i++;
     }
-    i++;
-    }
+
     for (var i = 1; i < arr.length; i++) {
       if (typeof arr[i] === 'number' && largest < arr[i]) {
         largest = arr[i];
@@ -27,6 +29,7 @@ var sprintFunctions = {
     for (var i = 0; i < wordsArray.length; i++) {
       wordsArray[i] = wordsArray[i].replace(/[^0-9a-z]/gi, "");
     }
+
     wordsArray = wordsArray.filter(function(x) {
       return x.length > 0;
     });
@@ -72,10 +75,11 @@ var sprintFunctions = {
   primes: function(num){
     var allNums = [];
     var primeArray = [];
+
     for (var i = 2; i <= num; i++) {
       allNums.push(i);
     }
-   primeArray = allNums;
+    primeArray = allNums;
 
     for (var i = 0; i < allNums.length; i++) {
       var count = 0;
@@ -83,19 +87,18 @@ var sprintFunctions = {
         if (allNums[i] % allNums[j] === 0) {
           count++;
         }
-
-        }
-        console.log(count);
-        console.log(9 % 3);
-        if (count > 1) {
-          primeArray.splice(i, 1, null);
+      }
+      if (count > 1) {
+        primeArray.splice(i, 1, null);
       }
     }
 
-    return primeArray.filter(function (x) {
+    var primesMinusNulls = primeArray.filter(function (x) {
       if (Boolean(x)) {
         return x;
       }
     });
+
+    return primesMinusNulls;
   },
 }
