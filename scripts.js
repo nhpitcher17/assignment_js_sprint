@@ -39,11 +39,29 @@ var sprintFunctions = {
   },
 
   compareArrays: function(arr1, arr2){
-    return arr1 === arr2;
+    for (var i = 0; i < arr1.length; i++) {
+      if (arr1[i] !== arr2[i]) {
+        return false;
+      }
+    }
+    return arr1.length === arr2.length;
   },
 
-  fizzBuzz: function(){
-    // your code here
+  fizzBuzz: function(num){
+    var fbArray = [];
+    for (var i = 1; i <= num; i++) {
+      var j = i - 1;
+      if (i % 5 === 0 && i % 3 === 0) {
+        fbArray[j] = "FIZZBUZZ";
+      } else if (i % 5 === 0) {
+        fbArray[j] = "BUZZ";
+      } else if (i % 3 === 0) {
+        fbArray[j] = "FIZZ";
+      } else {
+        fbArray[j] = i;
+      }
+    }
+    return fbArray;
   },
 
   myMap: function(){

@@ -63,6 +63,7 @@ var tester = {
     var actual = this.sprintObj.fizzBuzz(16);
     if (typeof actual === 'undefined') { actual = [] };
     this.results.fizzBuzz = ( this.sprintObj.compareArrays(exp,actual) );
+    console.log(exp == actual);
   },
 
 
@@ -101,4 +102,3 @@ var tester = {
 
 
 $(document).ready( function(){ tester.init( sprintFunctions )});
-
