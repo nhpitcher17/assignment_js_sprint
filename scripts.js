@@ -34,13 +34,12 @@ var sprintFunctions = {
     wordsArray = wordsArray.map(function(x) {
       return x[0].toUpperCase() + x.slice(1);
     });
-    
+
     return wordsArray.join("_");
   },
 
-  compareArrays: function(){
-    // your code here (replace the return)
-    return "Finish compareArrays first!"
+  compareArrays: function(arr1, arr2){
+    return arr1 === arr2;
   },
 
   fizzBuzz: function(){
