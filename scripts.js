@@ -19,11 +19,23 @@ var sprintFunctions = {
   },
 
   reversed: function(str){
-    return str.split("").reverse().join("");  
+    return str.split("").reverse().join("");
   },
 
-  loudSnakeCase: function(){
-    // your code here
+  loudSnakeCase: function(str){
+    var wordsArray = str.split(" ");
+    for (var i = 0; i < wordsArray.length; i++) {
+      wordsArray[i] = wordsArray[i].replace(/[^0-9a-z]/gi, "");
+    }
+    wordsArray = wordsArray.filter(function(x) {
+      return x.length > 0;
+    });
+
+    wordsArray = wordsArray.map(function(x) {
+      return x[0].toUpperCase() + x.slice(1);
+    });
+    
+    return wordsArray.join("_");
   },
 
   compareArrays: function(){
